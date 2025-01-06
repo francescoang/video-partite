@@ -1,10 +1,10 @@
-const createGithubServer = require('./')
-const GitHubApi = require('github')
-const path = require('path')
-const http = require('http')
+const createGithubServer = require('./');
+const GitHubApi = require('github');
+const path = require('path');
+const http = require('http');
 
 function getGithubObject() {
-	const token = ${{secrets.AUTH_PRIVATE_KEY}}
+	const token = ${{secrets.AUTH_PRIVATE_KEY}};
 
 	const github = new GitHubApi({
 		// required
@@ -15,19 +15,19 @@ function getGithubObject() {
 		headers: {
 			'user-agent': 'private-github-website-test', // GitHub is happy with a unique user agent
 		}
-	})
+	});
 
 	github.authenticate({
 		type: 'oauth',
 		token: token
-	})
+	});
 
-	return github
+	return github;
 }
 
 function getRepoOptions() {
-	const owner = {{ secrets.OWNER }}
-	const repo = ${{ secrets.REPO }}
+	const owner = ${{ secrets.OWNER }};
+	const repo = ${{ secrets.REPO }};
 
 	return {
 		owner,
@@ -36,7 +36,7 @@ function getRepoOptions() {
 	}
 }
 
-const server = http.createServer()
+const server = http.createServer();
 
 
 const options = {
@@ -72,7 +72,7 @@ const options = {
 	domain: 'localhost',
 	refresh: 60 * 60 * 1000,
 	server: server
-}
+};
 
 
-createGithubServer(getGithubObject(), getRepoOptions(), options).listen(8080)
+createGithubServer(getGithubObject(), getRepoOptions(), options).listen(8080);
