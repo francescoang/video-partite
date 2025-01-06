@@ -1,0 +1,25 @@
+{
+  "name": "private-github-website",
+  "version": "2.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified :-(\" && exit 0"
+  },
+  "author": "TehShrike",
+  "license": "WTFPL",
+  "dependencies": {
+    "concat-stream": "~1.4.7",
+    "gzip-all": "1.0.0",
+    "loud-rejection": "1.6.0",
+    "private-static-website": "~1.4.0",
+    "sync-github-to-fs": "~2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TehShrike/private-github-website.git"
+  },
+  "devDependencies": {
+    "github": "7.2.0"
+  }
+}
