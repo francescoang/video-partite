@@ -4,7 +4,7 @@ const path = require('path')
 const http = require('http')
 
 function getGithubObject() {
-	const token = ''
+	const token = '${{secrets.AUTH_PRIVATE_KEY}}'
 
 	const github = new GitHubApi({
 		// required
@@ -26,8 +26,8 @@ function getGithubObject() {
 }
 
 function getRepoOptions() {
-	const owner = ''
-	const repo = ''
+	const owner = '${{ secrets.OWNER }}'
+	const repo = '${{ secrets.REPO }}'
 
 	return {
 		owner,
